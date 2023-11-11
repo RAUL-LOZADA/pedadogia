@@ -1,0 +1,33 @@
+% Preguntas y respuestas
+preguntas = {
+    '¿Cuál es la capital de Francia?'
+    '¿Cuánto es 2 + 2?'
+};
+
+respuestas = {
+    'París'
+    '4'
+};
+
+% Inicialización de variables
+puntaje = 0;
+
+% Loop a través de las preguntas
+for i = 1:length(preguntas)
+    pregunta = preguntas{i};
+    respuesta_correcta = respuestas{i};
+    
+    % Mostrar la pregunta y obtener la respuesta del usuario
+    respuesta_usuario = input(pregunta, 's');
+    
+    % Verificar si la respuesta del usuario es correcta
+    if strcmpi(respuesta_usuario, respuesta_correcta)
+        fprintf('¡Correcto!\n');
+        puntaje = puntaje + 1;
+    else
+        fprintf('Incorrecto. La respuesta correcta es: %s\n', respuesta_correcta);
+    end
+end
+
+% Mostrar el puntaje final
+fprintf('Tu puntaje final es: %d\n', puntaje);
